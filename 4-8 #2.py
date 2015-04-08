@@ -1,4 +1,3 @@
-# __author__ = 'alexlyman'
 
 gal = float(raw_input("Please enter the number of gallons of gasoline: "))
 liter = gal * 3.7854
@@ -21,7 +20,6 @@ print "%f gallons of gasoline requires $%f US dollars" %(gal, cost)
 # while True:
 #     try:
 #         user_input = int(user_input)
-
 
 
 # Another option to look into
