@@ -64,7 +64,9 @@ print my_list
 #     return "hello" in string.lower()
 # print find_hello(my_string)
 
-#
+# this is a way to access the first and last index
+#def first_last6(nums):
+  # return 6 is nums[0] or 6 is nums[-1]
 #
 # Reciepe
 # ingredient = "PiZZa DouGh"
@@ -75,4 +77,102 @@ print my_list
 # else:
 #     my_list.append(text)
 #     print my_list
+
+# File i/o
+# open(name, mode)
+# r-read only
+# w -write only (this will delete the content and allow you to write on a blank document)
+# a - adds to the end of the doc
+# r+ - read and write
+# w+ - read and write (this will create the file if it doesn't exist)
+# a+ - read and append (will also create new file if it doesn't exist)
+f = open('text.txt', 'r')
+text = f.read()
+print text
+f.close()
+with open('text.txt', 'r+') as f: # similar to f = open('text.txt', 'r')
+    text = f.readlines() #this will create a list that has each line entered as an item
+with open('text.txt', 'r+') as f:
+    lines = ['This is line 1\n', 'This is line 2\n', 'This is line 3\n']
+    f.writelines(lines) # this will write 3 new lines in the
+
+with open('text.txt', 'r+') as f: # changing one letter in a file to be something else
+    for line in f:
+        line = line.replace('o', '0')
+        f.writelines(line)
+
+with open('text.txt', 'r+') as f: # puts each line into a list
+    text = f.readlines()
+    for line in text:
+        words = line.split() #if you leave line.split blank, it will split on the blank space (e.g. by word)
+        print words
+
+# DICTIONARYS
+person = {} # this instantiates a new dictionary
+
+person ={
+    "name": "Bob"
+    "age": "30"
+    "hair_color": "brown"
+    "eye_color": "brown"
+    "has_teeth": True
+}
+print person["age"] # to get value of a certain key
+#  or
+print person.get("age")
+
+person["num_legs"] = 2 # this adds a new key:value pair to a dict
+print person.keys() #this prints out the keys in a dict
+new_list = sorted(person) # this would sort the keys in a dict and assign them to a list
+print "num_legs" in person.keys() #to see if a thing is a key in a dict
+
+print person.items() # creates a list or key:value pairs or a tuple/ tuples are always in ()
+
+for key, val in person.items(): # this is tuple unpacking
+    print "%s ==> %s" % (key,value)
+
+#  {} denotes a dictionary
+#  [] denotes a list
+
+# Example of what we might do for the recipe organizer
+#  This is a dictionary inside of a list inside of a dictionary
+recipe = {
+    "name": "Pizza",
+    "description": "Delicious!",
+    "directions": "Make the pizza",
+    "ingredients": [
+        {
+            "name": "pepperoni"
+        },
+        {
+            "name": "cheese"
+        },
+        {
+            "name": "pizza dough"
+        }
+    ]
+}
+#  to list out the ingredients
+for ingredient in recipe["ingredients"]:
+    print ingredient.values()
+
+print len(person) # would return the number of key:value pairs in a dictionary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
