@@ -14,13 +14,13 @@ Given 3 numbers, return the sum of the first two multiplied by the third
 # def add_then_multiply(a, b, c):
 #     return sum_numbers(a, b) * c
 #
-# # Inline Functions (or annoymous function)
+# # Inline Functions (or anonymous function)
 #     print lambda x: x**2
 #     # basically saying, 'given x return x**2'
 #         def something(x):
 #             return x**2
 #
-# # Internal funcitons
+# # Internal functions
 # defined inside of the file
 #
 # # External functions
@@ -34,7 +34,25 @@ Given 3 numbers, return the sum of the first two multiplied by the third
 # If it a function calling another function, the second function will return control back to the original function upon completing the return
 
 
+# def my_sum(x, y=1000):
+#     result = x + y
+#     return result
+#
+# print my_sum(1, 2)
+# print my_sum(1)
+#
+#
+# class Car(object):
+#     def __init__(self, model, make, year, wheels=4, steering_wheel=True):  # Example of named parameter we've used in the past
+#         pass
 
+
+# def bar(a, b, *args, **kwargs):
+#     print a, b, args, kwargs
+#
+# bar("hello", "whatever", 'blah', "something else here", 'I\'m a valley girl', "'ello'ello", e="This is the E value", f="F value", g="G value", h="H value")
+# args are shown as tuples, kwargs are shown as a dictionary with key/value pairs
+# a b ('c', 'something else here') {'e': 'This is the E value', 'f': 'F value'}
 
 
 
