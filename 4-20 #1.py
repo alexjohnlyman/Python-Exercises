@@ -17,7 +17,7 @@ def double_char(str):
 double_char("The")
 double_char('AAbb')
 double_char('Hi-There')
-
+cler
 
 # Given 3 int values, a b c, return their sum. However, if one of the values is 13 then it does not
 # count towards the sum and values to its right do not count.
