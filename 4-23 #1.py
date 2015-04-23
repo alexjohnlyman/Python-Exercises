@@ -6,15 +6,20 @@
 # cat_dog('1cat1cadodog')  True
 
 
+def cat_dog(str):
+    cat_count = 0
+    dog_count = 0
+
+    for i in range(len(str)-1):
+        if str[i:i+3] == "cat":
+            cat_count += 1
+        if str[i:i+3] == "dog":
+            dog_count += 1
+    return cat_count == dog_count
+
 
 def cat_dog(str):
-    num_of_cats = 0
-    # num_of_dogs = 0
-    for i in range(len(str)-1):
-        if str[i:i+3] is "cat":
-            num_of_cats += 1
-        return num_of_cats
-
+    return str.count('cat') is str.count('dog')
 
 
 print cat_dog('catdog')
