@@ -248,3 +248,68 @@
 # print sum13([1, 2, 2, 1, 13, 4])
 # print sum13([])
 
+
+
+# Return the number of times that the string "code" appears anywhere in the given string,
+# except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+
+# count_code('aaacodebbb')  1
+# count_code('codexxcode')  2
+# count_code('cozexxcope') 2
+
+
+# def count_code(str):
+#   stri = list(str)
+#   count = 0
+#
+#   for index, letter in enumerate(str):
+#     if index+3 >= len(str):
+#       return count
+#     elif letter == "c" and str[index+1] == "o" and str[index+3] == "e":
+#       count += 1
+#
+#   return count
+
+# def count_code(str):
+#     count = 0
+#     for i in range(len(str)-3):
+#         if str[i:i+2] == "co" and str[i+3] == "e":
+#             count += 1
+#     return count
+
+
+# print count_code('aaacodebbb')
+# print count_code('codexxcode')
+# print count_code('cozexxcope')
+
+
+
+
+
+# For this problem, we'll round an int value up to the next multiple of 10 if its rightmost
+#  digit is 5 or more, so 15 rounds up to 20. Alternately, round down to the previous multiple
+#  of 10 if its rightmost digit is less than 5, so 12 rounds down to 10. Given 3 ints, a b c,
+# return the sum of their rounded values. To avoid code repetition, write a separate helper
+#  "def round10(num):" and call it 3 times. Write the helper entirely below and at the same
+# indent level as round_sum().
+
+# round_sum(16, 17, 18)  60
+# round_sum(12, 13, 14)  30
+# round_sum(6, 4, 4)  10
+
+
+# def round10(num):
+#     return round(num, -1)
+#
+# def round_sum(a, b, c):
+#     return round10(a) + round10(b) + round10(c)
+#
+#
+# print round_sum(16, 17, 18)
+# print round_sum(12, 13, 14)
+# print round_sum(6, 4, 4)
+
+
+
+
+
