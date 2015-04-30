@@ -345,33 +345,72 @@
 # make_chocolate(6, 1, 11) 6
 
 
+# STILL NEED TO WORK ON THIS
 
-def make_chocolate(small, big, goal):
-    if (small + (big * 5)) < goal:
-        return -1
-    elif (goal % 5) + small >= goal:
-        return (small) - ((goal)-goal%5)
-    elif (goal % 5) + small == goal:
-        return small
-    elif goal % 5 < small:
-        return goal % 5
-    elif goal % 5 > small:
-        return goal - (big*(goal%5))
-
-
-
-    # elif goal % 5 > small:
-    #     return -1
-
-print make_chocolate(4, 1, 9)
-print make_chocolate(4, 1, 10)
-print make_chocolate(4, 1, 7)
-print make_chocolate(6, 1, 11)
-
-
-
+# def make_chocolate(small, big, goal):
+#     if (small + (big * 5)) < goal:
+#         return -1
+#     elif (goal % 5) + small >= goal:
+#         return (small) - ((goal)-goal%5)
+#     elif (goal % 5) + small == goal:
+#         return small
+#     elif goal % 5 < small:
+#         return goal % 5
+#     elif goal % 5 > small:
+#         return goal - (big*(goal%5))
+#
+#
+#
+#     # elif goal % 5 > small:
+#     #     return -1
+#
+# print make_chocolate(4, 1, 9)
+# print make_chocolate(4, 1, 10)
+# print make_chocolate(4, 1, 7)
+# print make_chocolate(6, 1, 11)
 
 
 
 
+
+# Return the "centered" average of an array of ints, which we'll say is the mean average of the values,
+# except ignoring the largest and smallest values in the array. If there are multiple copies of the smallest value,
+# ignore just one copy, and likewise for the largest value. Use int division to produce the final average.
+# You may assume that the array is length 3 or more.
+
+# centered_average([1, 2, 3, 4, 100])  3
+# centered_average([1, 1, 5, 5, 10, 8, 7])  5
+# centered_average([-10, -4, -2, -4, -2, 0])  -3
+
+#my original approach
+# def centered_average(nums):
+#     nums.sort()
+#     new_list = nums[1:-1]
+#     total = sum(new_list)
+#     return total/len(new_list)
+
+#original, but simplified
+# def centered_average(nums):
+#     nums.sort()
+#     return sum(nums[1:-1:])/len(nums[1:-1:])
+
+#math aproach
+# def centered_average(nums):
+#   x = max(nums)
+#   y = min(nums)
+#   z = sum(nums)
+#   return (z - (x+y)) / (len(nums)-2)
+
+#Delete approach
+# 'del' will take the index of a list, based on the minimum number.
+# As opposed to remove(max(nums)), which would remove the first instance of something
+
+# def centered_average(nums):
+#     del nums[nums.index(min(nums))], nums[nums.index(max(nums))]
+#     return sum(nums)/len(nums)
+
+
+# print centered_average([1, 2, 3, 4, 100])
+# print centered_average([1, 1, 5, 5, 10, 8, 7])
+# print centered_average([-10, -4, -2, -4, -2, 0])
 
