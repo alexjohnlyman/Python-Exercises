@@ -87,18 +87,3 @@ import time
 #     print "fib took %.3f seconds" % (time.time() - start)
 #
 # fib_improved_time()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

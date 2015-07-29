@@ -1,4 +1,4 @@
-# This could be intergrated with Stripe and/or other payment processing options
+# This could be integrated with Stripe and/or other payment processing options
 
 from django.shortcuts import render, render_to_response, HttpResponse
 from django.template.context import RequestContext

@@ -48,15 +48,15 @@ d.talk()
 class Phone(object):
     def __init__(self, brand, model):
         self.brand = brand
-        self.model - model
+        self.model = model
+
 
 class Person(object):
     def __init__(self):
         self.phone = Phone()
 
-stan = Person(iPhone)
+stan = Person(Phone)
 print stan.phone
-
 
 
 class Other(object):
@@ -122,39 +122,3 @@ class Parent(object):
 class Child(Parent):
     def __init__(self):
         self.football_team = FootballTeam("cowboys", "blue and white")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
