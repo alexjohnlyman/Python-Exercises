@@ -38,28 +38,29 @@ import time
 # fib = [0, 1, 1, 2, 3, 5, 8, 13]
 
 
+# Working fibonacci sequence with basic timer
+fib_number = 10
 
-# fib_number = 43
-#
-# def fib(n):
-#     if n == 0:
-#         return 0
-#     elif n == 1:
-#         return 1
-#     else:
-#         return fib(n-1) + fib(n-2)
-#
-# # print fib(fib_number)
-#
-# def fib_time():
-#     start = time.time()
-#     fib(fib_number)
-#     print "fib took %.3f seconds" % (time.time() - start)
-#
-# fib_time()
+
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+
+def fib_time():
+    start = time.time()
+    number = fib(fib_number)
+    print "The fib (%i) took %.7f seconds" % (number, time.time() - start)
+
+fib_time()
+
 
 # Time complexity: O(2^n)
-
+#
 # def fib(n):
 #     if n == 0:
 #         print "n reached 0"
@@ -74,16 +75,21 @@ import time
 # print fib(4)
 
 
-# def fib_improved(n):
-#     a, b = 0, 1
-#     for i in range(n):
-#         a, b = b, a + b
-#     return a
-#
-#
-# def fib_improved_time():
-#     start = time.time()
-#     fib_improved(fib_number)
-#     print "fib took %.3f seconds" % (time.time() - start)
-#
-# fib_improved_time()
+# Improved version that has one replaces recursion with a for loop
+# fib_number = 7
+
+
+def fib_improved(n):
+    a, b = 0, 1
+    for i in range(n):
+        a, b = b, a + b
+        # print a, b
+    return a
+
+
+def fib_improved_time():
+    start = time.time()
+    new_number = fib_improved(fib_number)
+    print "The fib improved (%i) \n took %.7f seconds" % (new_number, time.time() - start)
+
+fib_improved_time()
