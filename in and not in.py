@@ -68,7 +68,7 @@ print my_list
 #def first_last6(nums):
   # return 6 is nums[0] or 6 is nums[-1]
 #
-# Reciepe
+# Recipe
 # ingredient = "PiZZa DouGh"
 # ingredient.lower() or ingredient.capitalize() or  ingredient.title() or ingredient.lower().replace(' ', '_')
 #
@@ -110,13 +110,13 @@ with open('text.txt', 'r+') as f: # puts each line into a list
 # DICTIONARYS
 person = {} # this instantiates a new dictionary
 
-person ={
+person = {
     "name": "Bob"
     "age": "30"
     "hair_color": "brown"
     "eye_color": "brown"
     "has_teeth": True
-}
+    }
 print person["age"] # to get value of a certain key
 #  or
 print person.get("age")
@@ -129,7 +129,7 @@ print "num_legs" in person.keys() #to see if a thing is a key in a dict
 print person.items() # creates a list or key:value pairs or a tuple/ tuples are always in ()
 
 for key, val in person.items(): # this is tuple unpacking
-    print "%s ==> %s" % (key,value)
+    print "%s ==> %s" % (key, val)
 
 #  {} denotes a dictionary
 #  [] denotes a list

@@ -1,11 +1,12 @@
 
-# Given an "out" string length 4, such as "<<>>", and a word, return a new string where the word is in the middle of the out string, e.g. "<<word>>".
+# Given an "out" string length 4, such as "<<>>", and a word, return a new string where the word is in
+# the middle of the out string, e.g. "<<word>>".
 
 # make_out_word('<<>>', 'Yay') '<<Yay>>'
 # make_out_word('<<>>', 'WooHoo') '<<WooHoo>>'
 # make_out_word('[[]]', 'word') '[[word]]'
 
-#i need to return a string that has 'word' spliced into 'out' after the second index [1].
+# i need to return a string that has 'word' spliced into 'out' after the second index [1].
 
 #
 # def make_out_word(out, word):
@@ -19,9 +20,10 @@
 # print make_out_word('<<>>', 'WooHoo')
 # print make_out_word('[[]]', 'word')
 
+# ---------------------------------------------------------------------------------------------------------------------
 
-
-# Given a string, return a new string made of 3 copies of the last 2 chars of the original string. The string length will be at least 2.
+# Given a string, return a new string made of 3 copies of the last 2 chars of the original string.
+# The string length will be at least 2.
 
 # extra_end('Hello')  'lololo'
 # extra_end('ab')  'ababab'
@@ -38,7 +40,7 @@
 # print extra_end('ab')
 # print extra_end('Hi')
 
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 
 # Given a string, return the string made of its first two chars, so the String "Hello" yields "He".
@@ -49,7 +51,7 @@
 # first_two('abcdefg')  'ab'
 # first_two('ab')  'ab'
 
-#if the length of the string is more than 2 return str[:1]
+# if the length of the string is more than 2 return str[:1]
 # else return str
 
 #
@@ -65,9 +67,7 @@
 # print first_two('ab')
 # print first_two('a')
 
-
-
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
 #
@@ -86,8 +86,10 @@
 # print first_half('HelloThere')
 # print first_half('abcdef')
 
+# ---------------------------------------------------------------------------------------------------------------------
 
-# Given a string, return a version without the first and last char, so "Hello" yields "ell". The string length will be at least 2.
+# Given a string, return a version without the first and last char, so "Hello" yields "ell".
+# The string length will be at least 2.
 #
 # without_end('Hello')  'ell'
 # without_end('java')  'av'
@@ -103,8 +105,7 @@
 # print without_end('java')
 # print without_end('coding')
 
-
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and
 #  the longer string on the inside. The strings will not be the same length, but they may be empty (length 0).
@@ -122,13 +123,11 @@
 #     else:
 #         return b + a + b
 #
-#
-#
 # print combo_string('Hello', 'hi')
 # print combo_string('hi', 'Hello')
 # print combo_string('aaa', 'b')
 
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Given a string and a non-negative int n, return a larger string that is n copies of the original string.
 #
@@ -145,7 +144,7 @@
 # print string_times('Hi', 3)
 # print string_times('Hi', 1)
 
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars,
 # or whatever is there if the string is less than length 3. Return n copies of the front;
@@ -166,8 +165,7 @@
 # print front_times('Chocolate', 3)
 # print front_times('Abc', 3)
 
-
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Given a non-empty string like "Code" return a string like "CCoCodCode".
 
@@ -186,7 +184,7 @@
 # print string_splosion('abc')
 # print string_splosion('ab')
 
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Given three ints, a b c, return True if one of b or c is "close" (differing from a by at most 1),
 # while the other is "far", differing from both other values by 2 or more.
@@ -196,7 +194,7 @@
 # close_far(1, 2, 3)  False
 # close_far(4, 1, 3)  True
 
-#i will need to check to see if a + 1 = b or c   a -1 = b or c    c +1 = b  c-1 =b
+# i will need to check to see if a + 1 = b or c   a -1 = b or c    c +1 = b  c-1 =b
 
 # def close_far(a, b, c):
 #     if ((a + 1) or (a + 2)) == b and ((c > a + 2) or (c < a - 2)):
@@ -210,8 +208,6 @@
 #     else:
 #         return False
 
-
-
 # def close_far(a, b, c):
 #     if  abs(b-a) <= 1 and abs(c-a) >= 2 and abs(c-b) >= 2:
 #         return True
@@ -224,7 +220,7 @@
 # print close_far(1, 2, 3)
 # print close_far(4, 1, 3)
 
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 #
 # def sum13(nums):
@@ -240,15 +236,13 @@
 #
 #     return total
 #
-#
-#
 # print sum13([1, 2, 2, 1])
 # print sum13([1, 1])
 # print sum13([1, 2, 2, 1, 13])
 # print sum13([1, 2, 2, 1, 13, 4])
 # print sum13([])
 
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Return the number of times that the string "code" appears anywhere in the given string,
 # except we'll accept any letter for the 'd', so "cope" and "cooe" count.
@@ -282,9 +276,7 @@
 # print count_code('codexxcode')
 # print count_code('cozexxcope')
 
-
-
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # For this problem, we'll round an int value up to the next multiple of 10 if its rightmost
 #  digit is 5 or more, so 15 rounds up to 20. Alternately, round down to the previous multiple
@@ -309,8 +301,7 @@
 # print round_sum(12, 13, 14)
 # print round_sum(6, 4, 4)
 
-
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Make bricks practice problem
 # Go through my fail cases and have true at the end.
@@ -330,10 +321,7 @@
 # print make_bricks(4, 1, 10)
 # print make_bricks(4, 1, 7)
 
-
-
-
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each).
 # Return the number of small bars to use, assuming we always use big bars before small bars.
@@ -343,6 +331,7 @@
 # make_chocolate(4, 1, 10)  -1
 # make_chocolate(4, 1, 7)  2
 # make_chocolate(6, 1, 11) 6
+# make_chocolate(6, 1, 10) 5
 
 
 # STILL NEED TO WORK ON THIS
@@ -350,28 +339,24 @@
 # def make_chocolate(small, big, goal):
 #     if (small + (big * 5)) < goal:
 #         return -1
-#     elif (goal % 5) + small >= goal:
-#         return (small) - ((goal)-goal%5)
-#     elif (goal % 5) + small == goal:
+#     elif (small + (big * 5)) == goal:
 #         return small
-#     elif goal % 5 < small:
-#         return goal % 5
-#     elif goal % 5 > small:
-#         return goal - (big*(goal%5))
-#
-#
-#
-#     # elif goal % 5 > small:
-#     #     return -1
+#     elif (small + (big * 5)) > goal:
+#         num_of_big = goal / big * 5
+#         if (small + (num_of_big * 5)) < goal:
+#             return -1
+#         elif (small + (num_of_big * 5)) == goal:
+#             return small
+#         else:
+#             return goal - (num_of_big * 5)
 #
 # print make_chocolate(4, 1, 9)
 # print make_chocolate(4, 1, 10)
 # print make_chocolate(4, 1, 7)
 # print make_chocolate(6, 1, 11)
+# print make_chocolate(6, 1, 10)
 
-
-
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Return the "centered" average of an array of ints, which we'll say is the mean average of the values,
 # except ignoring the largest and smallest values in the array. If there are multiple copies of the smallest value,
@@ -382,26 +367,26 @@
 # centered_average([1, 1, 5, 5, 10, 8, 7])  5
 # centered_average([-10, -4, -2, -4, -2, 0])  -3
 
-#my original approach
+# my original approach
 # def centered_average(nums):
 #     nums.sort()
 #     new_list = nums[1:-1]
 #     total = sum(new_list)
 #     return total/len(new_list)
 
-#original, but simplified
+# original, but simplified
 # def centered_average(nums):
 #     nums.sort()
 #     return sum(nums[1:-1:])/len(nums[1:-1:])
 
-#math aproach
+# math approach
 # def centered_average(nums):
 #   x = max(nums)
 #   y = min(nums)
 #   z = sum(nums)
 #   return (z - (x+y)) / (len(nums)-2)
 
-#Delete approach
+# Delete approach
 # 'del' will take the index of a list, based on the minimum number.
 # As opposed to remove(max(nums)), which would remove the first instance of something
 
@@ -414,7 +399,7 @@
 # print centered_average([1, 1, 5, 5, 10, 8, 7])
 # print centered_average([-10, -4, -2, -4, -2, 0])
 
-
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Given two strings, return True if either of the strings appears at the very end of the other string,
 # ignoring upper/lower case differences (in other words, the computation should not be "case sensitive").
@@ -425,7 +410,7 @@
 # end_other('abc', 'abXabc')  True
 
 
-#I need to check to see if a is in b, or if b is in a.
+# I need to check to see if a is in b, or if b is in a.
 
 # def end_other(a, b):
 #     a = a.lower()
@@ -441,3 +426,125 @@
 # print end_other('Hiabc', 'abc')
 # print end_other('AbC', 'HiaBc')
 # print end_other('abc', 'abXabc')
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Given an array of ints, return the number of 9's in the array.
+# array_count9([1, 2, 9])  1
+# array_count9([1, 9, 9])  2
+# array_count9([1, 9, 9, 3, 9])  3
+# Long Solution
+# def array_count9(nums):
+#     count = 0
+#     for i in nums:
+#         if i == 9:
+#             count += 1
+#     print count
+
+# List Comprehension solution
+# def array_count9(nums):
+#     print sum(1 for i in nums if i == 9)
+#
+# array_count9([1, 2, 9])
+# array_count9([1, 9, 9])
+# array_count9([1, 9, 9, 3, 9])
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Given an array of ints, return True if one of the first 4 elements in the array is a 9.
+# The array length may be less than 4.
+
+# array_front9([1, 2, 9, 3, 4]) True
+# array_front9([1, 2, 3, 4, 9]) False
+# array_front9([1, 2, 3, 4, 5]) False
+
+# STILL NEED TO WORK ON
+
+# def is_nine(x):
+#     if x == 9:
+#         return True
+#     else:
+#         return False
+#
+# def array_front9(nums):
+#     for i in nums[:4]:
+#         return is_nine(i)
+#
+#
+# print array_front9([1, 2, 9, 3, 4])
+# print array_front9([1, 2, 3, 4, 9])
+# print array_front9([1, 2, 3, 4, 5])
+# print array_front9([1, 2, 3, 9])
+# print array_front9([1, 2, 9])
+# print array_front9([9, 2, 3])
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# Given 3 int values, a b c, return their sum.
+# However, if one of the values is the same as another of the values, it does not count towards the sum.
+
+# lone_sum(1, 2, 3) 6
+# lone_sum(3, 2, 3) 2
+# lone_sum(3, 3, 3) 0
+
+# def lone_sum(a, b, c):
+#     if a == b and b == c:
+#         return 0
+#     elif a == b:
+#         return c
+#     elif b == c:
+#         return a
+#     elif a == c:
+#         return b
+#     else:
+#         return a + b + c
+#
+#
+# print lone_sum(1, 2, 3)
+# print lone_sum(3, 2, 3)
+# print lone_sum(3, 3, 3)
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Given 3 int values, a b c, return their sum.
+# However, if any of the values is a teen -- in the range 13..19 inclusive -- then that value counts as 0,
+# except 15 and 16 do not count as a teens.
+# Write a separate helper "def fix_teen(n):"that takes in an int value and returns that value fixed for the teen rule.
+# In this way, you avoid repeating the teen code 3 times (i.e. "decomposition").
+# Define the helper below and at the same indent level as the main no_teen_sum().
+
+# no_teen_sum(1, 2, 3) 6
+# no_teen_sum(2, 13, 1) 3
+# no_teen_sum(2, 1, 14) 3
+
+def fix_teen(n):
+    if n == 13:
+        return 0
+    elif n == 14:
+        return 0
+    elif n == 17:
+        return 0
+    elif n == 18:
+        return 0
+    elif n == 19:
+        return 0
+    elif n == 15:
+        return 15
+    elif n == 16:
+        return 16
+
+
+def no_teen_sum(a, b, c):
+    if a == range(13, 20):
+        a = fix_teen(a)
+
+    return a + b + c
+
+print no_teen_sum(1, 2, 3)
+print no_teen_sum(2, 13, 1)
+print no_teen_sum(2, 1, 14)
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
