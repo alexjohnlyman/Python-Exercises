@@ -592,15 +592,33 @@
 # sum67([1, 2, 2]) 5
 # sum67([1, 2, 2, 6, 99, 99, 7]) 5
 # sum67([1, 1, 6, 7, 2]) 4
+# sum67([1, 6, 2, 6, 2, 7, 1, 6, 99, 99, 7]) 2
 
-# STILL NEED TO WORK ON
+# i could have a switch that when it is on, adds the current number to the total.
+# And when it hits a 6 it turns off and would not add that number to the total, until it hits a 7.
 
 # def sum67(nums):
+#     new_list = []
+#     switch = True
+#     for i in nums:
+#         if switch is False and i == 7:
+#             switch = True
+#             # nums.pop(nums.index(i))
+#         elif switch is False and i != 7:
+#             switch = False
+#             # nums.pop(nums.index(i))
+#         elif i == 6:
+#             switch = False
+#             # nums.pop(nums.index(i))
+#         else:
+#             new_list.append(i)
+#     return sum(new_list)
 #
-#
+# print sum67([])
 # print sum67([1, 2, 2])
 # print sum67([1, 2, 2, 6, 99, 99, 7])
 # print sum67([1, 1, 6, 7, 2])
+# print sum67([1, 6, 2, 6, 2, 7, 1, 6, 99, 99, 7])
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -611,10 +629,7 @@
 # has22([2, 2]) True
 # has22([1, 2, 2]) True
 # has22([1, 2, 1, 2])  False
-# has22([2, 1, 2]) False
-# has22([4, 2, 4, 2, 2, 5]) True      THIS ONE IS STILL WRONG. IT RETURNS VALUE BEFORE CHECKING THE OTHER 2'S
-
-# STILL NEED TO WORK ON THIS
+# has22([4, 2, 4, 2, 2, 5]) True
 
 # def has22(nums):
 #     if len(nums) <= 1:
@@ -640,15 +655,14 @@
 #                     return True
 #                 elif (nums[i] == 2) and (nums[i - 1] == 2):
 #                     return True
-#                 else:
-#                     return False
+#             else:
+#                 return False
 #
 # print has22([2])
 # print has22([1, 2])
 # print has22([2, 2])
 # print has22([1, 2, 2])
 # print has22([1, 2, 1, 2])
-# print has22([2, 1, 2])
 # print has22([4, 2, 4, 2, 2, 5])
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -689,36 +703,181 @@
 # array123([1, 1, 2, 3, 1]) True
 # array123([1, 1, 2, 4, 1]) False
 # array123([1, 1, 2, 1, 2, 3]) True
+# array123([1, 2, 3, 1, 2, 3]) True
+
+# STILL NEED TO WORK ON THIS
+
+# def search_for_pattern(text, pattern):
+#     pattern = list(pattern)
+#     shifts = [1] * (len(pattern) + 1)
+#     shift = 1
+#     for pos in range(len(pattern)):
+#         while shift <= pos and pattern[pos] != pattern[pos-shift]:
+#             shift += shifts[pos-shift]
+#         shifts[pos+1] = shift
+#
+#     startPos = 0
+#     matchLen = 0
+#     for c in text:
+#         while matchLen == len(pattern) or matchLen >= 0 and pattern[matchLen] != c:
+#             startPos += shifts[matchLen]
+#             matchLen -= shifts[matchLen]
+#         matchLen += 1
+#         if matchLen == len(pattern):
+#             return True
+
 
 # def array123(nums):
-#     for i in range(len(nums) - 2):
-#         if i < len(nums) - 2:
-#             if (i == 1) and ([i + 1] == 2) and ([i + 2] == 3):
-#                 return True
-#             else:
-#                 pass
+#     return search_for_pattern(nums, (1, 2, 3))
+
+# def array123(nums):
+#     if len(nums) < 3:
+#         return False
+#     elif len(nums) == 3:
+#         if (nums[0] == 1) and (nums[1] == 2) and (nums[2] == 3):
+#             return True
 #         else:
 #             return False
+#     elif [1, 2, 3] in nums:
+#         return True
+#     else:
+#         for i in nums:
+#             if [i] < range(len(nums) - 2):
+#                 if nums[i] == 1:
+#                     if ([i + 1] == 2) and ([i + 2] == 3):
+#                         return True
+#                     else:
+#                         return False
+#             else:
+#                 return False
 
-def array123(nums):
-    if len(nums) < 3:
-        return False
-    elif len(nums) == 3:
-        if (nums[0] == 1) and (nums[1] == 2) and (nums[2] == 3):
-            return True
-        else:
-            return False
-    else:
-        for i in range(len(nums) - 2):
-            if (i == 1) and ([i + 1] == 2) and ([i + 2] == 3):
-                return True
-            elif (nums[i] == 2) and (nums[i - 1] == 2):
-                return True
-            else:
-                return False
+# print array123([1, 2])
+# print array123([1, 2, 3])
+# print array123([1, 1, 2, 3, 1])
+# print array123([1, 1, 2, 4, 1])
+# print array123([1, 1, 2, 1, 2, 3])
+# print array123([1, 2, 3, 1, 2, 3])
 
-print array123([1, 2])
-print array123([1, 2, 3])
-print array123([1, 1, 2, 3, 1])
-print array123([1, 1, 2, 4, 1])
-print array123([1, 1, 2, 1, 2, 3])
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# Return True if the string "cat" and "dog" appear the same number of times in the given string.
+
+# cat_dog('catdog') True
+# cat_dog('catcat') False
+# cat_dog('1cat1cadodog') True
+# cat_dog('catxxdogxxxdog') False
+
+# def cat_dog(str):
+#     dog_count = str.count("dog")
+#     cat_count = str.count("cat")
+#     if cat_count == dog_count:
+#         return True
+#     elif cat_count != dog_count:
+#         return False
+#
+# print cat_dog('catdog')
+# print cat_dog('catcat')
+# print cat_dog('1cat1cadodog')
+# print cat_dog('catxxdogxxxdog')
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Return the number of times that the string "code" appears anywhere in the given string,
+# except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+#
+# count_code('aaacodebbb') 1
+# count_code('codexxcode') 2
+# count_code('cozexxcope') 2
+
+
+# Long version
+# def count_code(str):
+#     num_of_code = str.count("coae") + str.count("cobe") + str.count("coce") + str.count("code") + \
+#     str.count("coee") + str.count("cofe") + str.count("coge") + str.count("cohe") + str.count("coie") +  \
+#     str.count("coje") + str.count("coke") + str.count("cole") + str.count("come") + str.count("cone") +  \
+#     str.count("cooe") + str.count("cope") + str.count("coqe") + str.count("core") + str.count("cose") +  \
+#     str.count("cote") + str.count("cowe") + str.count("coxe") + str.count("coye") + str.count("coze")
+#     return num_of_code
+
+# Short Version
+# def count_code(str):
+#     alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+#     num_of_words = 0
+#     for i in alph:
+#         num_of_words += str.count('co' + i + 'e')
+#     return num_of_words
+#
+#
+# print count_code('aaacodebbb')
+# print count_code('codexxcode')
+# print count_code('cozexxcope')
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Return True if the string contains an appearance of "xyz" where the xyz is not directly proceeded by a period(.)
+# So "xxyz" counts but "x.xyz" does not.
+
+# xyz_there('abcxyz') True
+# xyz_there('abc.xyz') False
+# xyz_there('xyz.abc') True
+# xyz_there('abc.xyzxyz') True
+
+# STILL NEED TO WORK ON THIS
+
+# def xyz_there(str):
+#     if "xyz" in str:
+#         if ".xyz" in str:
+#             return False
+#         else:
+#             return True
+#     else:
+#         return False
+#
+#
+# print xyz_there('abcxyz')
+# print xyz_there('abc.xyz')
+# print xyz_there('xyz.abc')
+# print xyz_there('abc.xyzxyz')
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
+# So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+
+# string_match('xxcaazz', 'xxbaaz') 3
+# string_match('abc', 'abc') 2
+# string_match('abc', 'axc') 0
+# string_match('abc', 'axcd') 0
+
+# STILL NEED TO WORK ON THIS
+
+# def string_match(a, b):
+#     count = 0
+#     longest_str = ""
+#     if len(a) > len(b):
+#         longest_str = a
+#         return longest_str
+#     elif len(a) < len(b):
+#         longest_str = b
+#         return longest_str
+#     else:
+#         longest_str = a
+#         return longest_str
+#     for i in range(len(longest_str)):
+#         if a[i] == b[i]:
+#             print i
+#             count += 1
+#             return count
+#
+#
+# print string_match('xxcaazz', 'xxbaaz')
+# print string_match('abc', 'abc')
+# print string_match('abc', 'axc')
+# print string_match('abc', 'axcd')
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
