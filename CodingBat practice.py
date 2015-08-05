@@ -517,34 +517,208 @@
 # no_teen_sum(1, 2, 3) 6
 # no_teen_sum(2, 13, 1) 3
 # no_teen_sum(2, 1, 14) 3
+# no_teen_sum(16, 17, 18) 16
 
-def fix_teen(n):
-    if n == 13:
-        return 0
-    elif n == 14:
-        return 0
-    elif n == 17:
-        return 0
-    elif n == 18:
-        return 0
-    elif n == 19:
-        return 0
-    elif n == 15:
-        return 15
-    elif n == 16:
-        return 16
-
-
-def no_teen_sum(a, b, c):
-    if a == range(13, 20):
-        a = fix_teen(a)
-
-    return a + b + c
-
-print no_teen_sum(1, 2, 3)
-print no_teen_sum(2, 13, 1)
-print no_teen_sum(2, 1, 14)
+# def fix_teen(n):
+#     if n in range(13, 15):
+#         return 0
+#     elif n in range(17, 20):
+#         return 0
+#     else:
+#         return n
+#
+#
+# def no_teen_sum(a, b, c):
+#     a = fix_teen(a)
+#     b = fix_teen(b)
+#     c = fix_teen(c)
+#     return a + b + c
+#
+# print no_teen_sum(1, 2, 3)
+# print no_teen_sum(2, 13, 1)
+# print no_teen_sum(2, 1, 14)
+# print no_teen_sum(16, 17, 18)
 
 # ---------------------------------------------------------------------------------------------------------------------
 
 
+# Return the number of even ints in the given array.
+# Note: the % "mod" operator computes the remainder, e.g. 5 % 2 is 1.
+
+# count_evens([2, 1, 2, 3, 4]) 3
+# count_evens([2, 2, 0]) 3
+# count_evens([1, 3, 5]) 0
+
+# def count_evens(nums):
+#     count = 0
+#     for i in nums:
+#         if i % 2 == 0:
+#             count += 1
+#     return count
+
+
+# List comp attempt
+# def count_evens(nums):
+#     return len([i for i in nums if i % 2 == 0])
+#
+#
+# print count_evens([2, 1, 2, 3, 4])
+# print count_evens([2, 2, 0])
+# print count_evens([1, 3, 5])
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Given an array length 1 or more of ints, return the difference between the largest and smallest values in the array.
+# Note: the built-in min(v1, v2) and max(v1, v2) functions return the smaller or larger of two values.
+
+# big_diff([10, 3, 5, 6]) 7
+# big_diff([7, 2, 10, 9]) 8
+# big_diff([2, 10, 7, 2]) 8
+
+# def big_diff(nums):
+#     return max(nums)-min(nums)
+#
+#
+# print big_diff([10, 3, 5, 6])
+# print big_diff([7, 2, 10, 9])
+# print big_diff([2, 10, 7, 2])
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# Return the sum of an array, except ignore sections of numbers starting with a 6 and extending to the next 7
+# (every 6 will be followed by at least one 7). Return 0 for no numbers.
+
+# sum67([1, 2, 2]) 5
+# sum67([1, 2, 2, 6, 99, 99, 7]) 5
+# sum67([1, 1, 6, 7, 2]) 4
+
+# STILL NEED TO WORK ON
+
+# def sum67(nums):
+#
+#
+# print sum67([1, 2, 2])
+# print sum67([1, 2, 2, 6, 99, 99, 7])
+# print sum67([1, 1, 6, 7, 2])
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Given an array of ints, return True if the array contains a 2 next to a 2 somewhere.
+
+# has22([2]) False
+# has22([1, 2]) False
+# has22([2, 2]) True
+# has22([1, 2, 2]) True
+# has22([1, 2, 1, 2])  False
+# has22([2, 1, 2]) False
+# has22([4, 2, 4, 2, 2, 5]) True      THIS ONE IS STILL WRONG. IT RETURNS VALUE BEFORE CHECKING THE OTHER 2'S
+
+# STILL NEED TO WORK ON THIS
+
+# def has22(nums):
+#     if len(nums) <= 1:
+#         return False
+#     elif len(nums) == 2:
+#         if (nums[0] == 2) and (nums[1] == 2):
+#             return True
+#         else:
+#             return False
+#     elif len(nums) == 3:
+#         if (nums[0] == 2) and (nums[1] == 2):
+#             return True
+#         if (nums[1] == 2) and (nums[2] == 2):
+#             return True
+#         else:
+#             return False
+#     else:
+#         if (nums[-2] == 2) and (nums[-1] == 2):
+#             return True
+#         else:
+#             for i in range(len(nums) - 1):
+#                 if (nums[i] == 2) and (nums[i + 1] == 2):
+#                     return True
+#                 elif (nums[i] == 2) and (nums[i - 1] == 2):
+#                     return True
+#                 else:
+#                     return False
+#
+# print has22([2])
+# print has22([1, 2])
+# print has22([2, 2])
+# print has22([1, 2, 2])
+# print has22([1, 2, 1, 2])
+# print has22([2, 1, 2])
+# print has22([4, 2, 4, 2, 2, 5])
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# Given an array of ints, return True if one of the first 4 elements in the array is a 9.
+# The array length may be less than 4.
+
+# array_front9([1, 2, 9, 3, 4]) True
+# array_front9([1, 2, 3, 4, 9]) False
+# array_front9([1, 2, 3, 4, 5]) False
+# array_front9([5, 5]) False
+
+# def array_front9(nums):
+#     if len(nums) <= 4:
+#         if 9 in nums:
+#             return True
+#         else:
+#             return False
+#     else:
+#         test = nums[0:4]
+#         if 9 in test:
+#             return True
+#         else:
+#             return False
+#
+# print array_front9([1, 2, 9, 3, 4])
+# print array_front9([1, 2, 3, 4, 9])
+# print array_front9([1, 2, 3, 4, 5])
+# print array_front9([5, 5])
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Given an array of ints, return True if .. 1, 2, 3, .. appears in the array somewhere.
+
+# array123([1, 2]) False
+# array123([1, 2, 3]) True
+# array123([1, 1, 2, 3, 1]) True
+# array123([1, 1, 2, 4, 1]) False
+# array123([1, 1, 2, 1, 2, 3]) True
+
+# def array123(nums):
+#     for i in range(len(nums) - 2):
+#         if i < len(nums) - 2:
+#             if (i == 1) and ([i + 1] == 2) and ([i + 2] == 3):
+#                 return True
+#             else:
+#                 pass
+#         else:
+#             return False
+
+def array123(nums):
+    if len(nums) < 3:
+        return False
+    elif len(nums) == 3:
+        if (nums[0] == 1) and (nums[1] == 2) and (nums[2] == 3):
+            return True
+        else:
+            return False
+    else:
+        for i in range(len(nums) - 2):
+            if (i == 1) and ([i + 1] == 2) and ([i + 2] == 3):
+                return True
+            elif (nums[i] == 2) and (nums[i - 1] == 2):
+                return True
+            else:
+                return False
+
+print array123([1, 2])
+print array123([1, 2, 3])
+print array123([1, 1, 2, 3, 1])
+print array123([1, 1, 2, 4, 1])
+print array123([1, 1, 2, 1, 2, 3])
