@@ -861,17 +861,23 @@
 # string_match('abc', 'axc') 0
 # string_match('abc', 'axcd') 0
 
-def string_match(a, b):
-    list_a = list(a)
-    list_b = list(b)
-    combined = []
-    new_list = []
-    for a, b in zip(list_a, list_b):
-        combined.append([a, b])
-        for i in combined:
-            if a == b:
-                new_list.append(a)
-        return new_list
+# def string_match(a, b):
+#     list_a = list(a)
+#     list_b = list(b)
+    # combined = []
+    # new_list = []
+    # for a, b in zip(list_a, list_b):
+    #     combined.append([a, b])
+    #     for i in combined:
+    #         if a == b:
+    #             new_list.append(a)
+    #     return new_list
+
+    # for i in list_a:
+    #     j = i + 1
+    #     if set(a)[i][j] == set(b)[i][j]:
+    #         list(set(a) & set(b))
+
     # print combined[0][0]
     # print combined[0][1]
     # print combined[0]
@@ -879,21 +885,13 @@ def string_match(a, b):
     # print combined[1][1]
     # print combined[1]
 
-    # for i in range(len(combined)-1):
-    #     j = i + 1
-        # [n for n in combined if n in list_a and n in list_b]
-        # if combined[i][0] == combined[i][1]:
-        #     if combined[j][0] == combined[j][1]:
-        #         count += 1
-        #         return count
-
-print string_match('xxcaazz', 'xxbaaz')
-# print string_match('abc', 'abc')
-# print string_match('abc', 'axc')
-# print string_match('abc', 'axcd')
-
-
-# ---------------------------------------------------------------------------------------------------------------------
+#     for i in range(len(combined)-1):
+#         j = i + 1
+#         [n for n in combined if n in list_a and n in list_b]
+#         if combined[i][0] == combined[i][1]:
+#             if combined[j][0] == combined[j][1]:
+#                 count += 1
+#                 return count
 
 # Old code for string match problem
   # for i in range(len(a)):
@@ -921,3 +919,12 @@ print string_match('xxcaazz', 'xxbaaz')
     #     if a[i] and a[i+1] == b[i] and b[i+1]:
     #         count += 1
     #     return count
+
+# print string_match('xxcaazz', 'xxbaaz')
+# print string_match('abc', 'abc')
+# print string_match('abc', 'axc')
+# print string_match('abc', 'axcd')
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
