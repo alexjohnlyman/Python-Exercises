@@ -334,21 +334,31 @@
 # make_chocolate(6, 1, 10) 5
 
 
-# STILL NEED TO WORK ON THIS
+#  WORKS, BUT COULD BE REFACTORED
 
 # def make_chocolate(small, big, goal):
 #     if (small + (big * 5)) < goal:
 #         return -1
 #     elif (small + (big * 5)) == goal:
 #         return small
-#     elif (small + (big * 5)) > goal:
-#         num_of_big = goal / big * 5
-#         if (small + (num_of_big * 5)) < goal:
-#             return -1
-#         elif (small + (num_of_big * 5)) == goal:
-#             return small
+#     # small + big are bigger then goal
+#     else:
+#         if big * 5 >= goal:
+#             num_of_big = goal / 5
+#             if (small + (num_of_big * 5)) < goal:
+#                 return -1
+#             elif (small + (num_of_big * 5)) == goal:
+#                 return small
+#             else:
+#                 return goal - (num_of_big * 5)
 #         else:
-#             return goal - (num_of_big * 5)
+#             if (small + (big * 5)) < goal:
+#                 return -1
+#             elif (small + (big * 5)) == goal:
+#                 return small
+#             else:
+#                 return goal - (big * 5)
+#
 #
 # print make_chocolate(4, 1, 9)
 # print make_chocolate(4, 1, 10)
@@ -705,7 +715,6 @@
 # array123([1, 1, 2, 1, 2, 3]) True
 # array123([1, 2, 3, 1, 2, 3]) True
 
-# STILL NEED TO WORK ON THIS
 
 # def search_for_pattern(text, pattern):
 #     pattern = list(pattern)
@@ -726,11 +735,12 @@
 #         if matchLen == len(pattern):
 #             return True
 
-
 # def array123(nums):
 #     return search_for_pattern(nums, (1, 2, 3))
 
+# Working Solution
 # def array123(nums):
+#     pattern_to_check = [1,2,3]
 #     if len(nums) < 3:
 #         return False
 #     elif len(nums) == 3:
@@ -740,17 +750,20 @@
 #             return False
 #     elif [1, 2, 3] in nums:
 #         return True
+#     elif set(pattern_to_check).issubset(set(nums)):
+#         return True
 #     else:
-#         for i in nums:
-#             if [i] < range(len(nums) - 2):
-#                 if nums[i] == 1:
-#                     if ([i + 1] == 2) and ([i + 2] == 3):
-#                         return True
-#                     else:
-#                         return False
-#             else:
-#                 return False
+#         return False
 
+# Shorter version of working solution using "issubset"
+# def array123(nums):
+#     pattern_to_check = [1,2,3]
+#     if set(pattern_to_check).issubset(set(nums)):
+#         return True
+#     else:
+#         return False
+#
+#
 # print array123([1, 2])
 # print array123([1, 2, 3])
 # print array123([1, 1, 2, 3, 1])
@@ -824,14 +837,10 @@
 # xyz_there('xyz.abc') True
 # xyz_there('abc.xyzxyz') True
 
-# STILL NEED TO WORK ON THIS
-
 # def xyz_there(str):
-#     if "xyz" in str:
-#         if ".xyz" in str:
-#             return False
-#         else:
-#             return True
+#     new_str = str.replace(".xyz", "")
+#     if "xyz" in new_str:
+#         return True
 #     else:
 #         return False
 #
@@ -852,28 +861,33 @@
 # string_match('abc', 'axc') 0
 # string_match('abc', 'axcd') 0
 
-# STILL NEED TO WORK ON THIS
+def string_match(a, b):
+    list_a = list(a)
+    list_b = list(b)
+    combined = []
+    new_list = []
+    for a, b in zip(list_a, list_b):
+        combined.append([a, b])
+        for i in combined:
+            if a == b:
+                new_list.append(a)
+        return new_list
+    # print combined[0][0]
+    # print combined[0][1]
+    # print combined[0]
+    # print combined[1][0]
+    # print combined[1][1]
+    # print combined[1]
 
-# def string_match(a, b):
-#     count = 0
-#     longest_str = ""
-#     if len(a) > len(b):
-#         longest_str = a
-#         return longest_str
-#     elif len(a) < len(b):
-#         longest_str = b
-#         return longest_str
-#     else:
-#         longest_str = a
-#         return longest_str
-#     for i in range(len(longest_str)):
-#         if a[i] == b[i]:
-#             print i
-#             count += 1
-#             return count
-#
-#
-# print string_match('xxcaazz', 'xxbaaz')
+    # for i in range(len(combined)-1):
+    #     j = i + 1
+        # [n for n in combined if n in list_a and n in list_b]
+        # if combined[i][0] == combined[i][1]:
+        #     if combined[j][0] == combined[j][1]:
+        #         count += 1
+        #         return count
+
+print string_match('xxcaazz', 'xxbaaz')
 # print string_match('abc', 'abc')
 # print string_match('abc', 'axc')
 # print string_match('abc', 'axcd')
@@ -881,3 +895,29 @@
 
 # ---------------------------------------------------------------------------------------------------------------------
 
+# Old code for string match problem
+  # for i in range(len(a)):
+  #       if set(list_a).intersection(list_b):
+  #           count += 1
+  #       else:
+  #           pass
+  #       return count
+  #
+    # for i in a:
+        # if i and i+1 ==
+    # all(True if a.count(item) >= b.count(item) else False for item in a)
+    # count = 0
+    # longest_str = ""
+    # if len(a) > len(b):
+    #     longest_str = a
+    #     return longest_str
+    # elif len(a) < len(b):
+    #     longest_str = b
+    #     return longest_str
+    # else:
+    #     longest_str = a
+    #     return longest_str
+    # for i in range(len(a)-1):
+    #     if a[i] and a[i+1] == b[i] and b[i+1]:
+    #         count += 1
+    #     return count
